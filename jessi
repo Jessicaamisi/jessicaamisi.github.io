@@ -1,0 +1,77 @@
+stock = {}
+def add_mentor( ):
+
+
+        nom1 = input("quel est le nom du mentor")
+        expertise = input("quel est son expertise")
+
+        stock[nom1]=expertise
+        if nom1 in stock:
+            print("ajoutez avec succes")
+
+
+
+def add_mentore( ):
+
+        nom1 = input("quel est le nom du mentor")
+        nom2 = input("quel est le nom du mentore")
+        object = input("quel est votre objectif")
+
+        stock[nom2]=({"mentor": nom1, "object": object})
+        if nom2 in stock:
+            print(f"{nom2} ajoute avec succes sous {nom1}")
+
+def enregistrer_une_session( ):
+
+        nom1 = input("quel est le nom du mentor")
+        nom2 = input("quel est le nom du mentore")
+        
+        date = int(input("entrer la date"))
+        sujet = input("quel est le sujet ")
+        remarques = input(" quel est votre remarque")
+        stock[nom2]=({"mentor":nom1, "date": date , "remarques": remarques, "sujet":sujet})
+        if nom1 not in stock or nom2 not in stock:
+            print("cette valeur n' existe pas")
+
+
+def consulter_les_progres( ):
+
+        nom1 = input("quel est le nom du mentor")
+        nom2 = input("quel est le nom du mentore")
+        date = int(input("entrer la date"))
+        sujet = input("quel est le sujet ")
+        remarques = input(" quel est votre remarque")
+        stock[nom2]['session']= ({"mentor": nom1, "date": date, "remarques": remarques, "sujet": sujet})
+        if nom1 not in stock or nom2 not in stock :
+            print("il n'existe pas ")
+        if  'session'  in stock[nom2]:
+          	sessions= stock[nom2]["sessions"]
+          	print(f"session pour {nom2} sous {nom1}:")
+
+def menu_principal():
+        print("enter l'option de votre choix")
+        print("1.ajouter mentor")
+        print("2. ajouter mentore")
+        print("3.enregistrer une session")
+        print("4.consulter les progres")
+        print("5.quitter")
+        print("fin du programme")
+while True:
+ menu_principal()
+ option = input("faites votre choix")
+ if option == '1':
+            print("ajouter un mentor:", add_mentor())
+ elif option == '2':
+            print("ajouter un mentore:", add_mentore())
+
+ elif option == '3':
+            print("enregistrer une session:", enregistrer_une_session())
+
+ elif option == '4':
+            print("consulter les progres:", consulter_les_progres())
+
+ elif option == '5':
+            print("Au revoir")
+            break
+ else:
+            print("programme terminé")
