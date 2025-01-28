@@ -1,77 +1,74 @@
-stock = {}
-def add_mentor( ):
+STOCK = {}
+class Python:
 
 
-        nom1 = input("quel est le nom du mentor")
-        expertise = input("quel est son expertise")
+        def Add_mentor(self ):
+                self.nom1=input("quel est le nom du mentor")
+                self.expertise=input("quel est son expertise")
+                STOCK[self.nom1]=self.expertise
+                if self.nom1 in STOCK:
+                        print("ajoutez avec succes")
+        def Add_mentore(self):
+                self.nom1=input("quel est le nom du mentor")
+                self.nom2=input("quel est le nom du mentore")
+                self.object= input("quel est votre objectif")
+                STOCK[self.nom2]=({"mentor": self.nom1 , "object": self.object})
+                if self.nom2 in STOCK:
+                        print(f"{self.nom2} ajouter avec successous {self.nom1}")
+        def Enregistrer_une_session(self):
+                
+                self.nom1=input("quel est le nom du mentor")
+                self.nom2=input("quel est le nom du mentore") 
+                self.date=int(input("entrer la date"))
+                self.sujet=input("quel est le sujet")
+                self.remarques=input ("quel est votre remarque")
+                STOCK[self.nom2]=({"Mentor":  self.nom1, "date": self.date , "sujet": self.sujet, "remarque": self. remarques})
+                if self.nom1 not in STOCK or self.nom2 not in STOCK:
+                        print("cette valeur n'existe pas")
+        def Consulter_les_progres(self):
+                
+                self.nom1=input("quel est le nom du mentor")
+                self.nom2=input("quel est le nom du mentore") 
+                self.date=int(input("entrer la date"))
+                self.sujet=input("quel est le sujet")
+                self.remarques=input ("quel est votre remarque") 
+                STOCK[self.nom2]["session"]=({"Mentor":  self.nom1, "date": self.date , "sujet": self.sujet , "remarque": self. remarques})
+                if self.nom1 not in STOCK or self.nom2 not in STOCK:
+                        print("cette valeur n'existe pas")
+                if "session"  not in STOCK [self.nom2]:
+                        sessions=STOCK[self.nom2]["session"]
+                        return print (f"session pour {self.nom2} sous {self.nom1}:")
+        def Menu_principal(self) :
+                print("entrer l'option de votre choix")
+                print("1. add mentor")
+                print("2. add mentore")
+                print("3.enregistrer une session")
+                print("4. consulter les progres") 
+                print("5. Quitter")
+                print("fin du programme")
+                while True:
+                        
+                        option1=Python()
+                        option1.Menu_principal()
+                        option=input("faites votre choix")
+                        if option=='1':
+                                print(option1.Add_mentor())
+                        elif option=='2':
+                                print(option1.Add_mentore()) 
+                        elif option=='3':
+                                print(option1.Enregistrer_une_session()) 
+                        elif option=='4':
+                                print(option1.Consulter_les_progres())   
+                        elif option=='5':
+                                print("au revoir!")
+                                break
+                        else:
+                                print("programme termine")                           
 
-        stock[nom1]=expertise
-        if nom1 in stock:
-            print("ajoutez avec succes")
 
 
 
-def add_mentore( ):
-
-        nom1 = input("quel est le nom du mentor")
-        nom2 = input("quel est le nom du mentore")
-        object = input("quel est votre objectif")
-
-        stock[nom2]=({"mentor": nom1, "object": object})
-        if nom2 in stock:
-            print(f"{nom2} ajoute avec succes sous {nom1}")
-
-def enregistrer_une_session( ):
-
-        nom1 = input("quel est le nom du mentor")
-        nom2 = input("quel est le nom du mentore")
-        
-        date = int(input("entrer la date"))
-        sujet = input("quel est le sujet ")
-        remarques = input(" quel est votre remarque")
-        stock[nom2]=({"mentor":nom1, "date": date , "remarques": remarques, "sujet":sujet})
-        if nom1 not in stock or nom2 not in stock:
-            print("cette valeur n' existe pas")
+                                     
 
 
-def consulter_les_progres( ):
-
-        nom1 = input("quel est le nom du mentor")
-        nom2 = input("quel est le nom du mentore")
-        date = int(input("entrer la date"))
-        sujet = input("quel est le sujet ")
-        remarques = input(" quel est votre remarque")
-        stock[nom2]['session']= ({"mentor": nom1, "date": date, "remarques": remarques, "sujet": sujet})
-        if nom1 not in stock or nom2 not in stock :
-            print("il n'existe pas ")
-        if  'session'  in stock[nom2]:
-          	sessions= stock[nom2]["sessions"]
-          	print(f"session pour {nom2} sous {nom1}:")
-
-def menu_principal():
-        print("enter l'option de votre choix")
-        print("1.ajouter mentor")
-        print("2. ajouter mentore")
-        print("3.enregistrer une session")
-        print("4.consulter les progres")
-        print("5.quitter")
-        print("fin du programme")
-while True:
- menu_principal()
- option = input("faites votre choix")
- if option == '1':
-            print("ajouter un mentor:", add_mentor())
- elif option == '2':
-            print("ajouter un mentore:", add_mentore())
-
- elif option == '3':
-            print("enregistrer une session:", enregistrer_une_session())
-
- elif option == '4':
-            print("consulter les progres:", consulter_les_progres())
-
- elif option == '5':
-            print("Au revoir")
-            break
- else:
-            print("programme terminé")
+                
